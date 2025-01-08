@@ -403,17 +403,33 @@ body {
     color: var(--primary-dark);
     cursor: pointer;
     transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.pattern-button:hover {
+    background: var(--primary-light);
+    color: white;
+    transform: translateY(-2px);
 }
 
 .pattern-button.active {
     background: var(--primary-light);
     color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .pattern-name {
     font-size: 1.2rem;
     color: var(--primary-dark);
     margin: 10px 0;
+    font-weight: 600;
+}
+
+.pattern-description {
+    color: var(--text-dark);
+    opacity: 0.8;
+    margin-top: 5px;
+    font-size: 0.9rem;
 }
 
 .breathing-circle {
