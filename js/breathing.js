@@ -7,9 +7,12 @@ class BreathingExercise {
         this.instruction = document.querySelector('.instruction');
         this.timerDisplay = document.querySelector('.timer');
         this.startButton = document.querySelector('.start-breathing');
+        this.patternButtons = document.querySelectorAll('.pattern-button');
+        this.patternName = document.querySelector('.pattern-name');
         this.patterns = {
             '4-4-4-2': {
                 name: '4-4-4-2 Box Breathing',
+                description: 'Inhale for 4, hold for 4, exhale for 4, hold for 2',
                 phases: {
                     inhale: { duration: 4, next: 'hold', text: 'Breathe In' },
                     hold: { duration: 4, next: 'exhale', text: 'Hold' },
@@ -19,6 +22,7 @@ class BreathingExercise {
             },
             'relaxing': {
                 name: 'Relaxing Breath',
+                description: 'Inhale for 4, hold for 7, exhale for 8',
                 phases: {
                     inhale: { duration: 4, next: 'hold', text: 'Breathe In' },
                     hold: { duration: 7, next: 'exhale', text: 'Hold' },
@@ -27,6 +31,7 @@ class BreathingExercise {
             },
             'calming': {
                 name: 'Calming Breath',
+                description: 'Inhale for 6, hold for 2, exhale for 7',
                 phases: {
                     inhale: { duration: 6, next: 'hold', text: 'Breathe In Slowly' },
                     hold: { duration: 2, next: 'exhale', text: 'Hold Briefly' },
@@ -35,6 +40,27 @@ class BreathingExercise {
             }
         };
         this.currentPattern = '4-4-4-2';
+        this.initializeEventListeners();
+        this.updatePatternDisplay();
+    }
+
+    initializeEventListeners() {
+        this.startButton.addEventListener('click', () => {
+            if (this.isRunning) {
+                this.stop();
+            } else {
+                this.start();
+            }
+        });
+
+        this.patternButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                this.patternButtons.forEach(b => b.classList.remove('active'));
+                button.classList.add('active');
+                const pattern = button.dataset.pattern;
+                this.setPattern(pattern);
+            });
+        });
     }
 
     start() {
@@ -56,14 +82,21 @@ class BreathingExercise {
     }
 
     setPattern(patternKey) {
+        if (this.isRunning) {
+            this.stop();
+        }
         this.currentPattern = patternKey;
-        this.stop();
+        this.currentPhase = 'inhale';
         this.updatePatternDisplay();
     }
 
     updatePatternDisplay() {
         const pattern = this.patterns[this.currentPattern];
-        document.querySelector('.pattern-name').textContent = pattern.name;
+        this.patternName.textContent = pattern.name;
+        const descriptionElement = document.querySelector('.pattern-description');
+        if (descriptionElement) {
+            descriptionElement.textContent = pattern.description;
+        }
     }
 
     runCycle() {
@@ -91,14 +124,7 @@ class BreathingExercise {
     }
 }
 
-// Initialize breathing exercise
+// Initialize breathing exercise when the document is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    const breathing = new BreathingExercise();
-    document.querySelector('.start-breathing').addEventListener('click', () => {
-        if (breathing.isRunning) {
-            breathing.stop();
-        } else {
-            breathing.start();
-        }
-    });
+    new BreathingExercise();
 }); 
