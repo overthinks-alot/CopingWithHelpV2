@@ -1,0 +1,497 @@
+:root {
+    --primary-dark: #2c2c54;
+    --primary-light: #7d7db3;
+    --accent: #9f9fe2;
+    --text-light: #f1f1f6;
+    --text-dark: #1a1a2e;
+    --background: #f5f5f9;
+    --success: #4caf50;
+    --warning: #ff9800;
+    --danger: #f44336;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Modern fonts */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.public-header {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #1a1a2e 100%);
+    padding: 3rem 0;
+    text-align: center;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    color: var(--text-light);
+}
+
+/* Rest of your CSS with updated colors */ 
+
+/* Mood Tracker Styles */
+.mood-tracker {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    margin: 20px 0;
+}
+
+.mood-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.mood-button {
+    font-size: 2rem;
+    background: none;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.mood-button:hover {
+    transform: scale(1.2);
+}
+
+/* Breathing Exercise Styles */
+.breathing-exercise {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.breathing-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-light);
+    animation: breathe 8s infinite ease-in-out;
+    transition: transform 4s ease-in-out;
+}
+
+.breathing-circle.inhale {
+    transform: scale(1.2);
+    background: var(--primary-light);
+}
+
+.breathing-circle.hold {
+    transform: scale(1.2);
+    background: var(--accent);
+}
+
+.breathing-circle.exhale {
+    transform: scale(1);
+    background: var(--primary-dark);
+}
+
+@keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Journal Styles */
+.journal-entry {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: var(--card-shadow);
+}
+
+.journal-input {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border: 1px solid var(--primary-light);
+    border-radius: 8px;
+    margin: 10px 0;
+    font-family: inherit;
+}
+
+/* Support Network Styles */
+.support-network {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: var(--card-shadow);
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid var(--primary-light);
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+/* Affirmations Styles */
+.affirmation-card {
+    background: var(--primary-dark);
+    color: var(--text-light);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 20px 0;
+    box-shadow: var(--card-shadow);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Progress Calendar Styles */
+.progress-calendar {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: var(--card-shadow);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--primary-light);
+    border-radius: 5px;
+}
+
+/* Enhanced Chatbot Styles */
+.message {
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 80%;
+}
+
+.message.user {
+    background: var(--primary-light);
+    color: var(--text-light);
+    margin-left: auto;
+}
+
+.message.bot {
+    background: var(--background);
+    color: var(--text-dark);
+    margin-right: auto;
+}
+
+/* Quick Access Buttons */
+.quick-access {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.quick-button {
+    background: var(--primary-light);
+    color: var(--text-light);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quick-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Quote Section Styles */
+.quote-section {
+    background: var(--primary-dark);
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+.daily-quote {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.daily-quote blockquote {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+.quote-button {
+    background: var(--accent);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quote-button:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* Enhanced Footer Styles */
+.help-footer {
+    background: var(--background);
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+.emergency-help {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.emergency-help h3 {
+    color: var(--primary-dark);
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.helpline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.helpline-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.helpline-card:hover {
+    transform: translateY(-5px);
+}
+
+.helpline-card h4 {
+    color: var(--primary-dark);
+    margin: 0 0 15px 0;
+}
+
+.phone-number {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.phone-number:hover {
+    color: var(--accent);
+}
+
+.emergency-note {
+    margin-top: 30px;
+    color: var(--danger);
+    font-weight: 500;
+}
+
+.emergency-number {
+    color: var(--danger);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--primary-light);
+    color: var(--text-dark);
+    opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .helpline-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .daily-quote blockquote {
+        font-size: 1.2rem;
+    }
+} 
+
+/* Mood History Styles */
+.mood-history {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.mood-entry {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 4px solid;
+    box-shadow: var(--card-shadow);
+}
+
+.mood-emoji {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.mood-date {
+    font-size: 0.8rem;
+    color: var(--text-dark);
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+.mood-note {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    color: var(--text-dark);
+    opacity: 0.9;
+} 
+
+/* Add to existing breathing exercise styles */
+
+.breathing-pattern-select {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pattern-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.pattern-button {
+    padding: 10px 20px;
+    border: 2px solid var(--primary-light);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--primary-dark);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pattern-button.active {
+    background: var(--primary-light);
+    color: white;
+}
+
+.pattern-name {
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    margin: 10px 0;
+}
+
+.breathing-circle {
+    position: relative;
+    overflow: hidden;
+}
+
+.breathing-circle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    opacity: 0.5;
+    animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 0.2; }
+    100% { transform: scale(1); opacity: 0.5; }
+} 
+
+/* Interactive Features Layout */
+.interactive-features {
+    padding: 2rem;
+    display: grid;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+}
+
+.feature-card h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive grid */
+@media (min-width: 768px) {
+    .interactive-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .feature-card:last-child {
+        grid-column: 1 / -1;
+    }
+} 
+
+/* Add these to your existing mood tracker styles */
+.mood-button.selected {
+    transform: scale(1.2);
+    border: 2px solid var(--primary-light);
+    animation: pulse 0.5s ease;
+}
+
+.mood-note-input {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border: 1px solid var(--primary-light);
+    border-radius: 8px;
+    margin: 10px 0;
+    font-family: inherit;
+    resize: vertical;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+} 

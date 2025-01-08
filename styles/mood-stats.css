@@ -1,0 +1,96 @@
+.mood-statistics {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: var(--card-shadow);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.stat-card {
+    background: var(--background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+}
+
+.mood-insights {
+    margin-top: 20px;
+    padding: 20px;
+    background: var(--primary-light);
+    color: var(--text-light);
+    border-radius: 10px;
+}
+
+#moodChart {
+    width: 100%;
+    height: 200px;
+}
+
+.trend-improving {
+    color: var(--success);
+}
+
+.trend-declining {
+    color: var(--warning);
+}
+
+.trend-stable {
+    color: var(--primary-dark);
+}
+
+.insight-card {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background: white;
+    box-shadow: var(--card-shadow);
+}
+
+.insight-card.positive {
+    border-left: 4px solid var(--success);
+}
+
+.insight-card.supportive {
+    border-left: 4px solid var(--warning);
+}
+
+.insight-card.achievement {
+    border-left: 4px solid var(--accent);
+}
+
+.insight-card.tip {
+    border-left: 4px solid var(--primary-dark);
+}
+
+.mood-emoji {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.mood-label {
+    text-transform: capitalize;
+    color: var(--text-dark);
+}
+
+/* Animation for insights */
+.insight-card {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+} 

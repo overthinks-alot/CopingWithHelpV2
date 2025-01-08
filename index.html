@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coping With Help - Your Safe Space</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/chatbot.css">
+</head>
+<body>
+    <header class="public-header">
+        <div class="header-content">
+            <h1>Coping With Help</h1>
+            <div class="header-divider"></div>
+            <h2>You're Not Alone</h2>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="welcome-section">
+            <h2>Welcome to Your Safe Space</h2>
+            <p>Sometimes we all need someone to talk to. Whether you're feeling left out, anxious, or just need to vent, we're here to listen.</p>
+        </section>
+
+        <section class="support-options">
+            <div class="option-card">
+                <h3>Talk to CWH Bot</h3>
+                <p>Our friendly AI companion is here 24/7 to listen and chat with you.</p>
+                <button class="chat-button" onclick="openChat()">Start Chatting</button>
+            </div>
+            <!-- More support options -->
+        </section>
+
+        <div id="chatbot-container" class="chatbot-hidden">
+            <div class="chat-header">
+                <h3>Chat with CWH Bot</h3>
+                <button class="close-chat" onclick="closeChat()">×</button>
+            </div>
+            <div id="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <section class="quote-section">
+            <div class="daily-quote">
+                <blockquote>
+                    "You are stronger than you know. Your story isn't over yet."
+                </blockquote>
+                <button onclick="newQuote()" class="quote-button">New Quote</button>
+            </div>
+        </section>
+
+        <section class="interactive-features">
+            <!-- Mood Tracker Card -->
+            <div class="feature-card">
+                <h2>Daily Mood Check-in</h2>
+                <div class="mood-tracker">
+                    <h3>How are you feeling today?</h3>
+                    <div class="mood-buttons">
+                        <button class="mood-button" data-mood="great">�</button>
+                        <button class="mood-button" data-mood="good">��</button>
+                        <button class="mood-button" data-mood="okay">😐</button>
+                        <button class="mood-button" data-mood="down">�</button>
+                        <button class="mood-button" data-mood="awful">😢</button>
+                    </div>
+                    <div class="mood-note-container">
+                        <textarea class="mood-note-input" placeholder="Add a note about how you're feeling (optional)"></textarea>
+                    </div>
+                    <div class="mood-history">
+                        <!-- Mood history will be populated here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="help-footer">
+        <div class="emergency-help">
+            <h3>24/7 Crisis Support</h3>
+            <div class="helpline-grid">
+                <div class="helpline-card">
+                    <h4>National Suicide Prevention Lifeline</h4>
+                    <a href="tel:988" class="phone-number">988</a>
+                    <p>Available 24/7</p>
+                </div>
+                <div class="helpline-card">
+                    <h4>Crisis Text Line</h4>
+                    <p>Text HOME to <strong>741741</strong></p>
+                    <p>Free 24/7 Support</p>
+                </div>
+                <div class="helpline-card">
+                    <h4>SAMHSA's National Helpline</h4>
+                    <a href="tel:1-800-662-4357" class="phone-number">1-800-662-4357</a>
+                    <p>Treatment Referral</p>
+                </div>
+            </div>
+            <p class="emergency-note">If you're in immediate danger, please call <a href="tel:911" class="emergency-number">911</a> or go to your nearest emergency room.</p>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2024 Coping With Help. You matter. You are not alone.</p>
+        </div>
+    </footer>
+
+    <script src="js/chatbot.js"></script>
+    <script src="js/mood-tracker.js"></script>
+</body>
+</html> 
