@@ -20,7 +20,7 @@ A mental health support website providing:
 - Chart.js for mood visualization
 
 ## Visit the Website
-[Coping With Help](https://YOUR_USERNAME.github.io/coping-with-help)
+[Coping With Help]([https://overthinks-alot.github.io/CopingWithHelpV2/])
 
 ## Local Development
 1. Clone the repository
